@@ -11,6 +11,12 @@
             %li= link_to 'Recent Movies', root_path
             %li= link_to 'About', root_path
             %li= link_to 'Contact', root_path
+          %ul.nav.nav-pills.pull-right
+            - if user_signed_in?
+              %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+            - else
+              %li= link_to 'Sign In', new_user_session_path
+              %li= link_to 'Sign Up', new_user_registration_path
   .jumbotron
     %h1 Moviegem of the Day!
     %p.lead SOME FILM HERE

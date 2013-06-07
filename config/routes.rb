@@ -1,4 +1,4 @@
 Moviegems::Application.routes.draw do
-  #devise_for :users
+  devise_for :users
   root 'home#index'
 end
