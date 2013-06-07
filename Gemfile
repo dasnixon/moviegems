@@ -17,6 +17,9 @@ gem 'aws-sdk'
 gem 'aws'
 gem 'panda' #https://devcenter.heroku.com/articles/pandastream
 gem 'cancan'
+gem 'rolify'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # gem 'therubyracer', platforms: :ruby
 
