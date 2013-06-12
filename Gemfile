@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0.rc1'
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'rails', '4.0.0.rc2'
+gem 'sass-rails', '~> 4.0.0.rc2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise', '~> 3.0.0.rc'
@@ -20,6 +20,8 @@ gem 'cancan'
 gem 'rolify'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'state_machine'
+gem 'bootstrap-will_paginate'
 
 # gem 'therubyracer', platforms: :ruby
 

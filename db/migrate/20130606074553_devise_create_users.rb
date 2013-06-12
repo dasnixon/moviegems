@@ -32,11 +32,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :name
 
+      t.integer :state
+
       t.timestamps
     end
 
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
+    add_index :users, :state
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
     # add_index :users, :authentication_token, :unique => true

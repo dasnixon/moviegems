@@ -1,0 +1,14 @@
+.container
+  %h1 Admin Panel
+  %table.table.table-striped
+    %tr
+      %th Email
+      %th Name
+      %th Phone Number
+    - @pending_directors.each do |director|
+      %tr
+        %td= director.email
+        %td= director.name
+        %td 555-555-5555
+
+  = will_paginate(@pending_directors)
