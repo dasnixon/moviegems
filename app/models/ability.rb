@@ -7,7 +7,7 @@ class Ability
       when 'Admin'
         can :manage, :all if user.has_role? 'admin'
       when 'Director'
-        can :manage, :all if user.has_role? 'admin' || user.has_role? 'director'
+        can :manage, :all if user.has_role?('admin') || user.has_role?('director')
       else
         can :read, :all
     end
