@@ -5,10 +5,20 @@
       %th Email
       %th Name
       %th Phone Number
+      %th Actions
     - @pending_directors.each do |director|
       %tr
         %td= director.email
         %td= director.name
         %td 555-555-5555
+        %td
+          .btn-group
+            %a.btn.dropdown-toggle.btn-info{'data-toggle' => 'dropdown', href: '#'}
+              Action
+              %span.caret
+            %ul.dropdown-menu
+              %li= link_to 'Accept', root_path
+              %li= link_to 'Decline', root_path
+              %li= link_to 'Send an Email', root_path
 
   = will_paginate(@pending_directors)
