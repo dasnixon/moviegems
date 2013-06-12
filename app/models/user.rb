@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :movie_gems, conditions: proc { 'state >= 2' }
+
   rolify
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
