@@ -27,8 +27,6 @@ gem 'bootstrap-will_paginate'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
-
 gem 'jbuilder', '~> 1.0.1'
 
 group :doc do

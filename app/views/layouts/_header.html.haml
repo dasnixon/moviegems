@@ -9,13 +9,15 @@
             %li= link_to 'Recent Movies', root_path
             %li= link_to 'About', about_path
             %li= link_to 'Contact', contact_path
-            - if current_user && !current_user.has_role?(:admin) && !current_user.has_role?(:director)
+            - if current_user && current_user.basic_user?
               %li= link_to 'Become a Director!', root_path
           %ul.nav.nav-pills.pull-right
             - if user_signed_in?
-              %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
               - if current_user.has_role?(:admin)
-                %li= link_to 'Admin Panel', panel_path
+                %li= link_to 'Admin Panel', admin_panel_path
+              - elsif current_user.has_role?(:director)
+                %li= link_to 'Director Panel', director_panel_path
+              %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
             - else
               %li= link_to 'Sign In', new_user_session_path
               %li= link_to 'Sign Up', new_user_registration_path

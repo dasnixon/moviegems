@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_email
 
-  has_many :movie_gems, conditions: proc { 'state >= 2' }
+  has_many :moviegems, conditions: proc { 'state = 2' }
 
   rolify
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
     after_transition to: :director do |user, transition|
       user.add_role :director
-      user.send_director_email
+      user.send_director_welcome_email
     end
 
     after_transition to: :admin do |user, transition|
@@ -51,5 +51,9 @@ class User < ActiveRecord::Base
     event :decline_user_for_director do
       transition any => :declined_director
     end
+  end
+
+  def basic_user?
+    self.state.zero?
   end
 end

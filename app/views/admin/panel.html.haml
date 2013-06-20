@@ -7,7 +7,7 @@
       %th Phone Number
       %th Actions
     - @pending_directors.each do |director|
-      %tr
+      %tr{id: director.id}
         %td= director.email
         %td= director.name
         %td 555-555-5555
@@ -17,8 +17,8 @@
               Action
               %span.caret
             %ul.dropdown-menu
-              %li= link_to 'Accept', '#', class: 'admin_director', id: director.id, 'data-action' => 'accept'
-              %li= link_to 'Decline', '#', class: 'admin_director', id: director.id, 'data-action' => 'decline'
-              %li= link_to 'Send an Email', class: 'send_email', id: director.id
+              %li= link_to 'Accept', '#', class: 'admin_director', 'data-id' => director.id, 'data-action' => 'accept'
+              %li= link_to 'Decline', '#', class: 'admin_director', 'data-id' => director.id, 'data-action' => 'decline'
+              %li= link_to 'Send an Email', class: 'send_email', 'data-id' => director.id
 
   = will_paginate(@pending_directors)
