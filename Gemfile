@@ -22,10 +22,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'state_machine'
 gem 'bootstrap-will_paginate'
+gem 'angularjs-rails'
 
 # gem 'therubyracer', platforms: :ruby
-
-gem 'jquery-rails'
 
 gem 'jbuilder', '~> 1.0.1'
 
