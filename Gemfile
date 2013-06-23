@@ -12,6 +12,8 @@ gem 'activerecord-postgres-hstore' #hstore support postgres
 gem 'surus' #json support postgres
 gem 'dalli'
 gem 'stripe'
+gem 'stripe_event'
+gem 'better_errors'
 gem 'sidekiq'
 gem 'aws-sdk'
 gem 'aws'
@@ -23,8 +25,7 @@ gem 'omniauth-facebook'
 gem 'state_machine'
 gem 'bootstrap-will_paginate'
 gem 'angularjs-rails'
-
-# gem 'therubyracer', platforms: :ruby
+gem 'jquery-rails'
 
 gem 'jbuilder', '~> 1.0.1'
 

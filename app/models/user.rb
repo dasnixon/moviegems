@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
   include Email
 
   after_create :send_welcome_email
+  before_destroy :cancel_subscription
+  before_save :update_stripe
 
+  has_one :subscription
   has_many :moviegems, conditions: proc { 'state = 2' }
 
   rolify
@@ -55,5 +58,15 @@ class User < ActiveRecord::Base
 
   def basic_user?
     self.state.zero?
+  end
+
+  private
+
+  def cancel_subscription
+    self.subscription.cancel_subscription
+  end
+
+  def update_stripe
+    self.subscription.update_stripe
   end
 end
